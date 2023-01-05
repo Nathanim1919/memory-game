@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+body{
+  font-family: 'Ubuntu', sans-serif;
   min-height: 100vh;
+  background-color: rgb(63, 127, 199);
+  overflow: hidden;
+}
+.cardList{
+  margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.card{
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.267);
+    background-color: rgb(16, 98, 173);
+    border-radius: .4rem;
+    display: grid;
+    place-items: center;
+    color: white;
+    animation: animate 1s;
+    transition: all 3s ease-in-out;
+}
+
+.card:hover img{
+  transform: scale(1.1);
+}
+
+.card h3{
+    position: absolute;
+    bottom: -1.3rem;
+    left: 0;
+    width: 100%;
+    background-color: rgba(57, 151, 245, 0.726);
+    padding: .4rem;
+    display: grid;
+    place-items: center;
+    text-shadow: 0 10px 10px rgba(0, 0, 0, 0.555);
+}
+
+.card img{
+    width: 100%;
+    transition: all .21s ease-in-out;
+}
+
+.header{
+    color: aliceblue;
+    display: flex;
+    background-color: rgb(43, 168, 218);
+    justify-content: space-between;
+    align-items: center;
+    padding:.1rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.082);
+}
+
+.header .score{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.gameOver{
+  background-color: white;
+  width: 30%;
+  margin: 2rem auto;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.219);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  place-content: center;
+  animation: 1s animate;
+}
+
+.gameOver >*{
+  margin: 0;
+  padding:.5rem;
+}
+.gameOver h1{
+  background-color: rgb(243, 75, 75);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.gameOver button{
+  width: 40%;
+  margin: .5rem auto;
+  border: none;
+  font-family: inherit;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.219);
+  background-color: rgb(132, 209, 132);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.gameOver button:hover{
+  cursor: pointer;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.219);
+  background-color: rgb(112, 179, 112);
+}
+
+@keyframes animate {
+  0%{
+    transform: translateY(100px);
   }
-  to {
-    transform: rotate(360deg);
+  100%{
+    transform: translateY(0px);
   }
 }
